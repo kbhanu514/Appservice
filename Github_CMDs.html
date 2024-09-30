@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mohan's Sample Git Commands</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 20px;
+        }
+        header {
+            background-color: #333;
+            color: yellow; /* Headline color changed to yellow */
+            padding: 10px;
+            text-align: center;
+        }
+        h1 {
+            color: yellow;
+        }
+        h2 {
+            color: #444;
+        }
+        article {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        code {
+            background-color: #f1f1f1;
+            padding: 3px 5px;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .summary {
+            background-color: #eee;
+            padding: 10px;
+            border-left: 5px solid #444;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mohan's Sample Git Commands</h1>
+    </header>
+
+    <article>
+        <section class="summary">
+            <h2>Summary of Common Git Commands</h2>
+            <p>This cheat sheet covers basic Git commands such as setting up repositories, making commits, branching, working with remote repositories, and undoing changes. Whether you are just starting with Git or looking to refresh your skills, these commands will help you manage your Git workflows efficiently.</p>
+        </section>
+
+        <section>
+            <h2>1. Setup Commands</h2>
+            <p><code>git config --global user.name "Your Name"</code> – Set the username for all repositories on your system.</p>
+            <p><code>git config --global user.email "you@example.com"</code> – Set the email address for all repositories.</p>
+            <p><strong>Example:</strong> If your name is Mohan and your email is mohan@example.com:</p>
+            <p><code>git config --global user.name "Mohan"</code></p>
+            <p><code>git config --global user.email "mohan@example.com"</code></p>
+        </section>
+
+        <section>
+            <h2>2. Creating Repositories</h2>
+            <p><code>git init</code> – Initialize a new Git repository in the current directory.</p>
+            <p><code>git clone [url]</code> – Clone an existing repository from the provided URL.</p>
+            <p><strong>Example:</strong> To initialize a new repo:</p>
+            <p><code>git init</code></p>
+            <p><strong>Example:</strong> To clone a repository:</p>
+            <p><code>git clone https://github.com/user/repository.git</code></p>
+        </section>
+
+        <section>
+            <h2>3. Basic Snapshotting</h2>
+            <p><code>git add [file]</code> – Stage a specific file for commit.</p>
+            <p><code>git add .</code> – Stage all changes in the current directory for commit.</p>
+            <p><code>git commit -m "message"</code> – Commit the staged changes with a message.</p>
+            <p><code>git status</code> – Check the status of your working directory and staged changes.</p>
+            <p><code>git log</code> – View the history of commits in the current branch.</p>
+            <p><strong>Example:</strong> To stage all changes and commit them with a message:</p>
+            <p><code>git add .</code></p>
+            <p><code>git commit -m "Added new features"</code></p>
+        </section>
+
+        <section>
+            <h2>4. Branching and Merging</h2>
+            <p><code>git branch</code> – List all branches (current branch is highlighted).</p>
+            <p><code>git branch [branch-name]</code> – Create a new branch with the specified name.</p>
+            <p><code>git checkout [branch-name]</code> – Switch to the specified branch.</p>
+            <p><code>git merge [branch-name]</code> – Merge the specified branch into the current branch.</p>
+            <p><code>git branch -d [branch-name]</code> – Delete the specified branch.</p>
+            <p><strong>Example:</strong> To create and switch to a new branch called "feature-branch":</p>
+            <p><code>git branch feature-branch</code></p>
+            <p><code>git checkout feature-branch</code></p>
+            <p><strong>Example:</strong> To merge "feature-branch" into the main branch:</p>
+            <p><code>git checkout main</code></p>
+            <p><code>git merge feature-branch</code></p>
+        </section>
+
+        <section>
+            <h2>5. Remote Repositories</h2>
+            <p><code>git remote -v</code> – List all configured remote repositories.</p>
+            <p><code>git remote add origin [url]</code> – Add a remote repository with the name "origin".</p>
+            <p><code>git push origin [branch]</code> – Push the specified branch to the remote repository.</p>
+            <p><code>git pull</code> – Fetch and merge changes from the remote repository into the current branch.</p>
+            <p><strong>Example:</strong> To add a remote repository and push changes:</p>
+            <p><code>git remote add origin https://github.com/user/repository.git</code></p>
+            <p><code>git push origin main</code></p>
+        </section>
+
+        <section>
+            <h2>6. Undoing Changes</h2>
+            <p><code>git checkout -- [file]</code> – Discard changes in the working directory to the specified file.</p>
+            <p><code>git reset [file]</code> – Unstage a file that was added to the staging area.</p>
+            <p><code>git revert [commit]</code> – Revert a specific commit by creating a new commit that undoes it.</p>
+            <p><code>git reset --hard [commit]</code> – Reset the working directory and staging area to a specific commit (discarding changes).</p>
+            <p><strong>Example:</strong> To undo changes to a file:</p>
+            <p><code>git checkout -- file.txt</code></p>
+        </section>
+
+        <section>
+            <h2>7. Stashing Changes</h2>
+            <p><code>git stash</code> – Save uncommitted changes for later and revert the working directory to the last commit.</p>
+            <p><code>git stash pop</code> – Reapply the last stashed changes and remove them from the stash list.</p>
+            <p><code>git stash list</code> – List all stashed changes.</p>
+            <p><strong>Example:</strong> To stash changes and later reapply them:</p>
+            <p><code>git stash</code></p>
+            <p><code>git stash pop</code></p>
+        </section>
+    </article>
+
+    <footer>
+        <p>&copy; 2024 Mohan's Sample Git Commands</p>
+    </footer>
+
+</body>
+</html>
